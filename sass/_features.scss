@@ -1,0 +1,31 @@
+.features {
+    grid-column: center-start / center-end;
+
+    margin: 15rem 0;
+
+    display: grid;
+    //grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); // usefull trick to add many tracks to the container (3 by 3, 2 by 4, 1 by 6).
+    grid-gap: 6rem;
+    align-items: start; // default is stretch. it fixes many problems.
+}
+
+.feature {
+
+    display: grid;
+    grid-template-columns: min-content 1fr; // no need to specify rows, they will be the size of the content. this is common in css grid.
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2.5rem;
+
+    &__icon {
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+        grid-row: 1 / span 2;
+        transform: translateY(-1rem);
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
+}
